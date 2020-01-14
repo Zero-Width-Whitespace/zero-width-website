@@ -3,21 +3,38 @@ function isNotEmpty(str){
 }
 
 async function encode() {
-        var toEncode = await document.getElementById("plain-text").value;
-        if (isNotEmpty(toEncode)) {
-            const response = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
-            if (response.ok){
-                response.json().then(data => {
-                    console.log(data);
-                });
-            }
+    var toEncode = await document.getElementById("plain-text").value;
+    if (isNotEmpty(toEncode)) {
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + toEncode);
+        if (response.ok){
+            response.json().then(data => {
+            document.getElementById("response").textContent = data.name + " " + data.id;
+            });
         }
+    } 
 }
 
 async function decode() {
-        var toDecode = await document.getElementById("cypher-text").value;
-        if (isNotEmpty(toDecode)) {
-            console.log("decoding: " + toDecode);
-            //create new text area for the result
+    var toDecode = await document.getElementById("cypher-text").value;
+    if (isNotEmpty(toDecode)) {
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + toDecode);
+        if (response.ok){
+            response.json().then(data => {
+            document.getElementById("response").textContent = data.name + " " + data.id;
+            });
         }
+    }
+}
+
+async function clearForm(id) {
+    await document.getElementById(id).reset();
+}
+
+function clearResults() {
+    document.getElementById("response").textContent = "--Result will appear here--";
+}
+
+function copyContent(){
+    const resp = document.getElementById("response").textContent;
+    navigator.clipboard.writeText(resp);
 }

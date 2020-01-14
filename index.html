@@ -13,7 +13,8 @@
                         <div class="form-group">
                             <label for="plain-text">Text to encode:</label>
                             <textarea class="form-control" id="plain-text"></textarea><br /> 
-                            <input class="btn btn-primary" type="button" onclick="encode()" value="ENCODE" />
+                            <input class="btn btn-primary" type="button" onclick="encode()" value="Encode" />
+                            <input class="btn btn-primary" type="button" onclick="clearForm(this.form.id)" value="Clear" />
                         </div>
                 </form>   
             </div>
@@ -23,11 +24,16 @@
                         <div class="form-group">
                             <label for="cypher-text">Text to encode:</label>
                             <textarea class="form-control" id="cypher-text"></textarea><br /> 
-                            <input class="btn btn-primary" type="button" onclick="decode()" value="DECODE" />
+                            <input class="btn btn-primary" type="button" onclick="decode()" value="Decode" />
+                            <input class="btn btn-primary" type="button" onclick="clearForm(this.form.id)" value="Clear" />
                         </div>
                 </form>   
             </div>
-
+            <div id="response-container" class="container-fluid">
+            <p id="response">--Result will appear here--</p>
+            <input class="btn btn-primary" type="button" onclick="clearResults()" value="Clear" />
+            <input class="btn btn-primary" type="button" onclick="copyContent()" value="Copy" />
+            </div>
             <script src="script.js"></script>
     </body>
 </html>
