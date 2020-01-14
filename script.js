@@ -26,8 +26,8 @@ async function decode() {
     }
 }
 
-async function clearForm(id) {
-    await document.getElementById(id).reset();
+function clearForm(id) {
+    document.getElementById(id).value = "";
 }
 
 function clearResults() {

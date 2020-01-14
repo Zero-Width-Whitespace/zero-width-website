@@ -8,33 +8,49 @@
         <title>Zero-Width Whitespace encoder / decoder</title>
     </head>
     <body>
-            <div id="encode" class="container-fluid">
-                <form id="encode-form">
+        <div class="container">
+            <div class="card-deck">
+                <div class="card">
+                    <h5 class="card-header">Encode</h5>
+                    <div class="card-body">
                         <div class="form-group">
                             <label for="plain-text">Text to encode:</label>
-                            <textarea class="form-control" id="plain-text"></textarea><br /> 
-                            <input class="btn btn-primary" type="button" onclick="encode()" value="Encode" />
-                            <input class="btn btn-primary" type="button" onclick="clearForm(this.form.id)" value="Clear" />
+                            <textarea class="form-control" rows=7 id="plain-text"></textarea><br /> 
                         </div>
-                </form>   
-            </div>
+                    </div>
+                    <div class="card-footer">
+                        <input class="btn btn-primary" type="button" onclick="encode()" value="Encode" />
+                        <input class="btn btn-primary" type="button" onclick="clearForm('plain-text')" value="Clear" />            
+                    </div>
+                </div>
 
-            <div id="decode" class="container-fluid">
-                <form id="decode-form">
+                <div class="card">
+                    <h5 class="card-header">Decode</h5>
+                    <div class="card-body">
                         <div class="form-group">
-                            <label for="cypher-text">Text to encode:</label>
-                            <textarea class="form-control" id="cypher-text"></textarea><br /> 
-                            <input class="btn btn-primary" type="button" onclick="decode()" value="Decode" />
-                            <input class="btn btn-primary" type="button" onclick="clearForm(this.form.id)" value="Clear" />
+                            <label for="cypher-text">Text to decode:</label>
+                            <textarea class="form-control" rows=7 id="cypher-text"></textarea><br /> 
                         </div>
-                </form>   
+                    </div>
+                    <div class="card-footer">
+                        <input class="btn btn-primary" type="button" onclick="decode()" value="Decode" />
+                        <input class="btn btn-primary" type="button" onclick="clearForm('cypher-text')" value="Clear" />
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Result</h5>
+                    <div class="card-body">
+                        <p id="response" class="card-text">--Result will appear here--</p>
+                    </div>
+                    <div class="card-footer">
+                        <input class="btn btn-primary" type="button" onclick="copyContent()" value="Copy" />
+                        <input class="btn btn-primary" type="button" onclick="clearResults()" value="Clear" />
+                    </div>
+                </div>
             </div>
-            <div id="response-container" class="container-fluid">
-            <p id="response">--Result will appear here--</p>
-            <input class="btn btn-primary" type="button" onclick="clearResults()" value="Clear" />
-            <input class="btn btn-primary" type="button" onclick="copyContent()" value="Copy" />
-            </div>
-            <script src="script.js"></script>
+        </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
 
