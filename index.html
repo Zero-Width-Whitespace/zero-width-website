@@ -18,29 +18,33 @@
                 <div class="card">
                     <h5 class="card-header">Encode</h5>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="plain-text">Text to encode:</label>
-                            <textarea class="form-control" rows=7 id="plain-text"></textarea><br /> 
-                        </div>
+                        <form id="encode" action="javascript:encode()" >
+                            <div class="form-group">
+                                <label for="plain-text">Text to encode:</label>
+                                <textarea class="form-control" rows=7 name="stringToEncode"></textarea><br /> 
+                            </div>
                     </div>
                     <div class="card-footer">
-                        <input class="btn btn-primary" type="button" onclick="encode()" value="Encode" />
+                        <input class="btn btn-primary" type="submit" value="Encode" />
                         <input class="btn btn-primary" type="button" onclick="clearForm('plain-text')" value="Clear" />            
                     </div>
+                        </form>
                 </div>
 
                 <div class="card">
                     <h5 class="card-header">Decode</h5>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="cypher-text">Text to decode:</label>
-                            <textarea class="form-control" rows=7 id="cypher-text"></textarea><br /> 
-                        </div>
+                        <form id="decode">
+                            <div class="form-group">
+                                <label for="cypher-text">Text to decode:</label>
+                                <textarea class="form-control" rows=7 name="stringToDecode"></textarea><br /> 
+                            </div>
                     </div>
                     <div class="card-footer">
                         <input class="btn btn-primary" type="button" onclick="decode()" value="Decode" />
                         <input class="btn btn-primary" type="button" onclick="clearForm('cypher-text')" value="Clear" />
                     </div>
+                        </form>
                 </div>
                 <div class="card">
                     <h5 class="card-header">Result</h5>
