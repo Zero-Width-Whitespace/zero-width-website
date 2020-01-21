@@ -7,8 +7,13 @@
 
         <title>Zero-Width Whitespace encoder / decoder</title>
     </head>
-    <body>
-        <div class="container">
+    <body class="bg-dark">
+        <div class="container bg-transparent">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-white text-center text-capitalize">Zero-Width Whitespace</h1> <h3 class="text-white text-center text-monospace">encoder / decoder</h3>
+                </div>
+            </div>
             <div class="card-deck">
                 <div class="card">
                     <h5 class="card-header">Encode</h5>
@@ -40,7 +45,8 @@
                 <div class="card">
                     <h5 class="card-header">Result</h5>
                     <div class="card-body">
-                        <p id="response" class="card-text">--Result will appear here--</p>
+                        <p id="response" class="card-text text-justify">Result will appear here. When encoding, this message will disappear. 
+                        This means the conversion was successful. Click 'Copy' to copy your zero-width-encoded text to clipboard</p>
                     </div>
                     <div class="card-footer">
                         <input class="btn btn-primary" type="button" onclick="copyContent()" value="Copy" />
